@@ -5,9 +5,9 @@ import (
 	"os"
 )
 
-// ParseJSONFromFile
-// parse a JSON file to an interface
-func ParseJSON(path string, data interface{}) (err error) {
+// ParseJSONFile
+// open the passed file from path and try to unmarshal its contents into the passed interface
+func ParseJSONFile(path string, data interface{}) (err error) {
 
 	// try to open the JSON file
 	file, err := os.ReadFile(path)
