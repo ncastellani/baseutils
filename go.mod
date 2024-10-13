@@ -1,4 +1,4 @@
-module github.com/ncastellani/base-utils
+module github.com/ncastellani/baseutils
 
 go 1.23.0
 
