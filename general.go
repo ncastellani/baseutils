@@ -61,3 +61,13 @@ func RandomString(length int, upperCase, lowerCase, numbers bool) string {
 
 	return string(b)
 }
+
+// GetKey
+// get a key value of a interface within a string map
+func GetKey(needle string, haystack map[string]interface{}) interface{} {
+	if val, ok := haystack[needle]; ok {
+		return val
+	} else {
+		return nil
+	}
+}
