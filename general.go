@@ -37,7 +37,7 @@ func IsMap(v interface{}) bool {
 func RandomString(length int, upperCase, lowerCase, numbers bool) string {
 
 	// prepare the charset
-	charset := "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+	charset := ""
 
 	if upperCase {
 		charset = charset + "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
