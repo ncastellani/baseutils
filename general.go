@@ -1,6 +1,8 @@
 package baseutils
 
 import (
+	"fmt"
+	"log"
 	"math/rand"
 	"time"
 )
@@ -70,4 +72,24 @@ func GetKey(needle string, haystack map[string]interface{}) interface{} {
 	} else {
 		return nil
 	}
+}
+
+// NewLogger
+// create a new logger using the parent logger prefix and writer
+func NewLogger(l *log.Logger, prefix string) *log.Logger {
+	return log.New(l.Writer(), fmt.Sprintf("%v%v ", l.Prefix(), prefix), log.LstdFlags|log.Lmsgprefix)
+}
+
+// TruncateText
+// truncate a text and add ellipsis to its end
+func TruncateText(s string, maxLen int) string {
+	runes := []rune(s)
+	if len(runes) <= maxLen {
+		return s
+	}
+	if maxLen < 3 {
+		maxLen = 3
+	}
+
+	return string(runes[0:maxLen-3]) + "..."
 }
